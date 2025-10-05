@@ -1,133 +1,156 @@
 # Alx_CapstoneProject
-🧠 Habit Tracker API – Capstone Project
+A backend API for a Habit Tracking Application that helps users build and maintain habits through reminders, streak tracking, and calendar integration.
+This project is part of my Capstone Project for the ALX Backend course.
 
-A backend API for a Habit Tracking Application that helps users build and maintain habits through reminders, streak tracking, and calendar integration. This project is part of my Capstone Project for the ALX Backend course.
+📌 Table of Contents
 
 🚀 Project Overview
 
-The Habit Tracker App is designed to help users create, manage, and track their daily habits effectively.
-Key features include:
-
-✅ Create and manage personal habits.
-
-⏰ Set reminders for habits at specific times.
-
-🔥 Track daily streaks and progress.
-
-📅 Calendar integration to align habits with daily plans.
-
-📊 View progress analytics and habit history.
-
-This backend is built with Django REST Framework and follows a clean, modular architecture for scalability and maintainability.
-
 🗄️ Database Design (ERD)
-
-Below is the Entity Relationship Diagram (ERD) representing the database structure:
-
-
-(Replace the link with the actual ERD image URL from your Google Doc or diagram tool)
 
 📡 API Endpoints
 
-Here’s an overview of the core API endpoints the backend exposes:
+🛠️ Tech Stack
+
+🧪 Installation & Setup
+
+📂 Project Structure
+
+📈 Next Steps
+
+📚 Progress Report (Part 3)
+
+⚠️ Challenges & Solutions
+
+📂 Repository
+
+👤 Author
+
+🚀 Project Overview
+
+The Habit Tracker App helps users form and maintain daily habits through an intuitive, data-driven backend.
+
+✨ Key Features
+
+✅ Create, update, and delete personal habits
+
+⏰ Set custom reminders for each habit
+
+🔥 Track streaks and habit completion history
+
+📅 Sync with calendar to align habits with daily plans
+
+📊 View progress analytics over time
+
+🗄️ Database Design (ERD)
+
+Here’s the high-level Entity Relationship Diagram (ERD) for the project:
+
+(Replace the link with the actual ERD image from your Google Doc or diagram tool)
+
+📡 API Endpoints
+
+Below is a summary of the main API endpoints:
 
 Endpoint	Method	Description	Auth Required
 /api/users/register/	POST	Register a new user	❌
 /api/users/login/	POST	Authenticate user & get token	❌
-/api/habits/	GET	List all habits for the authenticated user	✅
+/api/habits/	GET	List all habits for the logged-in user	✅
 /api/habits/	POST	Create a new habit	✅
-/api/habits/<id>/	GET	Retrieve details of a specific habit	✅
+/api/habits/<id>/	GET	Retrieve a specific habit	✅
 /api/habits/<id>/	PUT	Update a habit	✅
 /api/habits/<id>/	DELETE	Delete a habit	✅
 /api/reminders/	POST	Create a reminder for a habit	✅
 /api/streaks/	GET	View current streaks and progress	✅
-/api/calendar/sync/	POST	Sync habits with external calendar	✅
+/api/calendar/sync/	POST	Sync habits with an external calendar	✅
 🛠️ Tech Stack
 
 Backend: Django, Django REST Framework
 
-Database: PostgreSQL (or MySQL)
+Database: PostgreSQL / MySQL
 
-Authentication: JWT (JSON Web Tokens)
+Auth: JWT (JSON Web Tokens)
 
-Calendar Sync: Google Calendar API (optional extension)
+Calendar Sync: Google Calendar API (optional)
 
-Other Tools: Celery & Redis (for background reminders)
+Background Jobs: Celery + Redis (for reminders)
 
 🧪 Installation & Setup
-
-Clone the repository:
-
+1️⃣ Clone the Repository
 git clone https://github.com/yourusername/habit-tracker-api.git
 cd habit-tracker-api
 
-
-Create a virtual environment and install dependencies:
-
+2️⃣ Create Virtual Environment & Install Dependencies
 python -m venv venv
-source venv/bin/activate  # On Windows use venv\Scripts\activate
+source venv/bin/activate    # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
+3️⃣ Configure Environment Variables
 
-Set up your .env file:
+Create a .env file in the root directory:
 
-SECRET_KEY=your_django_secret_key
+SECRET_KEY=your_secret_key
 DEBUG=True
 DATABASE_URL=postgres://user:password@localhost:5432/habit_db
 
-
-Apply migrations and run the server:
-
+4️⃣ Run Migrations & Start the Server
 python manage.py migrate
 python manage.py runserver
 
 
-Access the API at:
+API is now live at:
 👉 http://127.0.0.1:8000/api/
 
-🧰 Project Structure
+📂 Project Structure
 habit-tracker-api/
-├── habits/              # Habit app (models, views, serializers)
-├── users/               # User authentication & profiles
-├── reminders/           # Reminder and notification logic
-├── streaks/             # Streak tracking logic
-├── calendar/            # Calendar integration (optional)
+├── habits/               # Habit models, serializers, views
+├── users/                # User auth and profile management
+├── reminders/            # Reminder scheduling logic
+├── streaks/              # Streak tracking and history
+├── calendar/             # Calendar sync integration
 ├── manage.py
 └── README.md
 
 📈 Next Steps
 
- Implement automated email/notification reminders.
+ Implement automated email/notification reminders
 
- Add analytics dashboard for user habit insights.
+ Add progress analytics dashboard
 
- Deploy to a cloud platform (Render/Heroku).
+ Deploy the backend to Render or Heroku
 
- Add test coverage for all endpoints.
+ Write unit and integration tests for all endpoints
 
 📚 Progress Report (Part 3)
 
-✅ Project initialized and GitHub repo set up.
+✅ Repository initialized and pushed to GitHub
+✅ ERD and API endpoints designed and documented
+✅ Core models and initial endpoints implemented
 
-✅ ERD and API endpoints designed.
+🎯 Next Week’s Focus:
 
-✅ Core models and basic endpoints implementation started.
+Implement reminder scheduling
 
-Next week goals: Implement reminder scheduling, streak logic, and integrate calendar API.
+Build streak logic
 
-📌 Challenges & Solutions
+Integrate Google Calendar API
+
+⚠️ Challenges & Solutions
 Challenge	Solution
-Designing a scalable database schema	Created a normalized ERD with clear relationships
-Reminder scheduling logic	Plan to use Celery with Redis for background tasks
-Authentication handling	Implemented JWT-based auth for secure access
+Designing a scalable schema	Created a normalized ERD with clear relationships
+Implementing reminder scheduling	Plan to use Celery with Redis for async tasks
+Authentication & security	Integrated JWT-based authentication
 📂 Repository
 
-🔗 GitHub: https://github.com/yourusername/habit-tracker-api
+🔗 GitHub Repo: https://github.com/yourusername/habit-tracker-api
 
 👤 Author
 
 Ian Ndambuki
 📧 Email: indumia2@gmail.com
 
-💼 LinkedIn
- | 🐙 GitHub
+🐙 GitHub: yourusername
+
+💡 Final Note
+
+This project is part of the ALX Backend Capstone Project, focusing on building real-world backend applications from scratch. It’s designed to be extendable and production-ready.
