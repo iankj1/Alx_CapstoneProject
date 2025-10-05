@@ -53,20 +53,25 @@ Here’s the high-level Entity Relationship Diagram (ERD) for the project:
 Below is a summary of the main API endpoints:
 
 Endpoint	Method	Description	Auth Required
-/api/users/register/	POST	Register a new user	❌
-/api/users/login/	POST	Authenticate user and return token	❌
-/api/users/profile/	GET	Retrieve logged-in user's profile	✅
-/api/users/profile/	PUT	Update user profile	✅
-/api/tasks/	GET	Get a list of all tasks for the logged-in user	✅
-/api/tasks/	POST	Create a new task	✅
-/api/tasks/<id>/	GET	Retrieve details of a specific task	✅
-/api/tasks/<id>/	PUT	Update a task	✅
-/api/tasks/<id>/	DELETE	Delete a task	✅
-/api/tasks/<id>/complete/	PATCH	Mark a task as completed	✅
-/api/tasks/streaks/	GET	Get current streak and task completion stats	✅
-/api/reminders/	POST	Set a reminder for a specific task	✅
-/api/reminders/	GET	Retrieve all reminders for the logged-in user	✅
-/api/calendar/sync/	POST	Sync tasks with external calendar (optional feature)	✅
+
+| Endpoint                    | Method     | Description                                   | Auth Required |
+| --------------------------- | ---------- | --------------------------------------------- | ------------- |
+| `/api/users/register/`      | **POST**   | Register a new user                           | ❌             |
+| `/api/users/login/`         | **POST**   | Authenticate user and return a JWT token      | ❌             |
+| `/api/users/profile/`       | **GET**    | Retrieve the logged-in user’s profile         | ✅             |
+| `/api/users/profile/`       | **PUT**    | Update the logged-in user’s profile           | ✅             |
+| `/api/tasks/`               | **GET**    | Get all tasks for the logged-in user          | ✅             |
+| `/api/tasks/`               | **POST**   | Create a new task                             | ✅             |
+| `/api/tasks/<id>/`          | **GET**    | Retrieve details of a specific task by ID     | ✅             |
+| `/api/tasks/<id>/`          | **PUT**    | Update an existing task                       | ✅             |
+| `/api/tasks/<id>/`          | **DELETE** | Delete a task by ID                           | ✅             |
+| `/api/tasks/<id>/complete/` | **PATCH**  | Mark a task as completed                      | ✅             |
+| `/api/tasks/streaks/`       | **GET**    | View current streak and task completion stats | ✅             |
+| `/api/reminders/`           | **POST**   | Create a reminder for a task                  | ✅             |
+| `/api/reminders/`           | **GET**    | Get all reminders for the logged-in user      | ✅             |
+| `/api/calendar/sync/`       | **POST**   | Sync tasks with external calendar (optional)  | ✅             |
+
+
 🛠️ Tech Stack
 
 Backend: Django, Django REST Framework
