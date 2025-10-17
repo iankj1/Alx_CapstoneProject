@@ -162,4 +162,65 @@ Ian Ndambuki
 
 💡 Final Note
 
+# To-Do List Backend — ALX Capstone
+
+Backend API for a To-Do List application with reminders and streak tracking.
+
+## Features
+- User registration/login (JWT)
+- Task CRUD, filtering, search, ordering
+- Set reminders (Celery + Redis)
+- Streak tracking on task completion
+- Swagger API docs
+- Docker / Docker Compose for reproducible environment
+- Tests for auth and tasks
+
+## Quickstart (local, SQLite)
+1. Create venv:
+   $ python -m venv venv
+   $ source venv/bin/activate
+2. Install:
+   $ pip install -r requirements.txt
+3. Copy `.env.example` -> `.env` and set values
+4. Migrate and create superuser:
+   $ python manage.py makemigrations
+   $ python manage.py migrate
+   $ python manage.py createsuperuser
+5. Run server:
+   $ python manage.py runserver
+6. Open:
+   - Swagger: http://127.0.0.1:8000/swagger/
+   - API root: http://127.0.0.1:8000/
+
+## Docker (Postgres + Redis)
+1. Copy `.env.example` -> `.env` and set `DATABASE_URL=postgres://postgres:postgres@db:5432/todo_db`
+2. Build & run:
+   $ docker compose up --build
+3. Migrate:
+   $ docker compose exec web python manage.py migrate
+4. Create superuser:
+   $ docker compose exec web python manage.py createsuperuser
+
+## API Endpoints (summary)
+- POST /api/users/register/
+- POST /api/users/login/
+- POST /api/users/token/refresh/
+- GET/PUT /api/users/me/
+- GET/POST /api/tasks/
+- GET/PUT/PATCH/DELETE /api/tasks/{id}/
+- PATCH /api/tasks/{id}/complete/
+- GET /api/tasks/streak/
+- Swagger: /swagger/
+
+## Tests
+Run:
+$ python manage.py test
+(or with Docker: docker compose exec web python manage.py test)
+
+## Notes
+- Reminder delivery uses Celery; configure SMTP or push service for real notifications.
+- Calendar sync endpoints are left as scaffold for OAuth integration.
+
+
+
 This project is part of the ALX Backend Capstone Project, focusing on building real-world backend applications from scratch. It’s designed to be extendable and production-ready.
